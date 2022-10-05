@@ -355,6 +355,10 @@ func (p *Plugin) printEventSummary(userID string, item *calendar.Event) string {
 	}
 	text += fmt.Sprintf("**When**: %s @ %s\n", dateToDisplay, timeToDisplay)
 
+	if item.Description != "" {
+		text += fmt.Sprintf("**Description**: %s", item.Description)
+			}
+	
 	if item.Location != "" {
 		text += fmt.Sprintf("**Where**: %s\n", item.Location)
 	}
